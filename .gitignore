@@ -18,7 +18,13 @@ config.*
 /debian/irqbalance.postrm.debhelper
 /debian/irqbalance.prerm.debhelper
 /debian/irqbalance.substvars
+/debian/irqbalance-imx.debhelper.log
+/debian/irqbalance-imx.postinst.debhelper
+/debian/irqbalance-imx.postrm.debhelper
+/debian/irqbalance-imx.prerm.debhelper
+/debian/irqbalance-imx.substvars
 /debian/irqbalance/
+/debian/irqbalance-imx/
 /debian/stamp-patched
 /install-sh
 /libtool

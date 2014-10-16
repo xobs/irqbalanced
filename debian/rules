@@ -41,7 +41,7 @@ clean: unpatch
 	rm -fr aclocal.m4 compile config.guess config.h config.h.in \
 		config.log config.status config.sub configure INSTALL \
 		install-sh libtool ltmain.sh m4 Makefile.in missing stamp-h1 \
-		debian/irqbalance
+		debian/irqbalance-imx
 
 install: build
 	dh_testdir
@@ -50,7 +50,8 @@ install: build
 	dh_installdirs
 	# Add here commands to install the package into debian/irqbalance.
 	# $(MAKE) DESTDIR=$(CURDIR)/debian/irqbalance install
-	mv irqbalance debian/irqbalance/usr/sbin
+	mkdir -p debian/irqbalance-imx/usr/sbin
+	mv irqbalance debian/irqbalance-imx/usr/sbin
 
 # Build architecture-independent files here.
 binary-indep: install

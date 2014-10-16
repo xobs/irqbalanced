@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+CONF=/etc/default/irqbalance
+
+if [ "$1" = "configure" ]; then
+    if [ ! -e $CONF ]; then
+        echo "#Configuration for the irqbalance daemon" > $CONF.tmp
+        echo >> $CONF.tmp
+        echo "#Should irqbalance be enabled?" >> $CONF.tmp
+        echo "ENABLED=1" >> $CONF.tmp
+        echo "#Balance the IRQs only once?" >> $CONF.tmp
+        echo "ONESHOT=0" >> $CONF.tmp
+    
+        mv -f "$CONF.tmp" "$CONF" 
+    fi
+fi
+
+#DEBHELPER#
